@@ -1,0 +1,6 @@
+<inset xmlns:android="http://schemas.android.com/apk/res/android"
+    android:insetTop="6dp"
+    android:insetBottom="6dp"
+    android:insetLeft="6dp"
+    android:insetRight="6dp"
+    android:drawable="@drawable/map_fill" />

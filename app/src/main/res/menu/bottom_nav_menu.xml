@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/nav_home"
+        android:icon="@drawable/nav_cloud_sun_fill"
+        android:title="Pogoda" />
+    <item
+        android:id="@+id/nav_locations"
+        android:icon="@drawable/nav_map_fill"
+        android:title="Lokalizacje" />
+    <item
+        android:id="@+id/nav_settings"
+        android:icon="@drawable/nav_gear_fill"
+        android:title="Ustawienia" />
+</menu>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="colorPrimary">#FFFFFFFF</color> <!-- Biały -->
+    <color name="colorPrimaryVariant">#F0F0F0</color> <!-- Jasny szary (dla kliknięcia) -->
+    <color name="colorOnPrimary">#000000</color> <!-- Ciemny tekst na białym tle -->
+    <color name="nav_active">#FFFFFFFF</color>
+    <color name="nav_inactive">#66FFFFFF</color>
+    <color name="blue_dark">#0D47A1</color>
+    <color name="blue_darker">#002171</color>
+    <color name="cyan">#00BCD4</color>
+    <color name="gray_with_alpha">#88FFFFFF</color>
+</resources>

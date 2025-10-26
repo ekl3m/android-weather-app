@@ -1,0 +1,120 @@
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="48dp"
+    android:paddingHorizontal="16dp">
+
+    <!-- Guideliny -->
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_day"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintGuide_begin="0dp"
+        android:orientation="vertical" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintGuide_begin="64dp"
+        android:orientation="vertical" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_temp_min"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintGuide_begin="128dp"
+        android:orientation="vertical" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_temp_max"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintGuide_end="0dp"
+        android:orientation="vertical" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_bar_start"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="165dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_bar_end"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_end="35dp" />
+
+    <!-- Dzień tygodnia -->
+    <TextView
+        android:id="@+id/text_day"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Pon."
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="@id/guideline_day"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+    <!-- Ikona pogody -->
+    <ImageView
+        android:id="@+id/image_icon"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:src="@drawable/cloud_fill"
+        android:scaleType="centerInside"
+        android:contentDescription="Ikona pogody"
+        app:layout_constraintStart_toStartOf="@id/guideline_icon"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+    <!-- Temperatura min -->
+    <TextView
+        android:id="@+id/text_temp_min"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="10°"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="@id/guideline_temp_min"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+    <!-- Tło paska (cały zakres) -->
+    <View
+        android:id="@+id/temp_bar_background"
+        android:layout_width="0dp"
+        android:layout_height="4dp"
+        android:background="@drawable/temp_bar_bg_drawable"
+        app:layout_constraintStart_toEndOf="@+id/guideline_bar_start"
+        app:layout_constraintEnd_toStartOf="@+id/guideline_bar_end"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+    <!-- Pasek temperatury -->
+    <View
+        android:id="@+id/temp_bar"
+        android:layout_width="0dp"
+        android:layout_height="4dp"
+        android:background="@drawable/temp_bar_drawable"
+        app:layout_constraintStart_toStartOf="@+id/temp_bar_background"
+        app:layout_constraintTop_toTopOf="@id/temp_bar_background"
+        app:layout_constraintBottom_toBottomOf="@id/temp_bar_background" />
+
+    <!-- Temperatura max -->
+    <TextView
+        android:id="@+id/text_temp_max"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="22°"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="@id/guideline_temp_max"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

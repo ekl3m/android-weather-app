@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- Tło: 2 warstwy -->
+    <FrameLayout
+        android:id="@+id/background_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/background_image_old"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:src="@drawable/bg_default2" />
+
+        <ImageView
+            android:id="@+id/background_image_new"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:alpha="0" />
+    </FrameLayout>
+
+    <!-- Layout główny: fragment + bottom nav -->
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/banner_connection"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:paddingTop="32dp"
+            android:orientation="vertical"
+            android:visibility="gone"
+            android:background="@drawable/bg_blur_light"
+            android:padding="12dp"
+            android:gravity="center">
+
+            <TextView
+                android:id="@+id/banner_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Dane pogodowe niedostępne"
+                android:textColor="@android:color/white"
+                android:textStyle="bold"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/banner_subtitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ostatnia aktualizacja: --:--"
+                android:textColor="@android:color/white"
+                android:textSize="14sp"
+                android:layout_marginTop="4dp" />
+        </LinearLayout>
+
+        <!-- Kontener na fragmenty -->
+        <FrameLayout
+            android:id="@+id/fragment_container"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+        <!-- Pasek nawigacji -->
+        <FrameLayout
+            android:id="@+id/bottom_bar_container"
+            android:layout_width="match_parent"
+            android:layout_height="64dp"
+            android:background="@drawable/bg_blur_dark">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_gravity="top"
+                android:background="#22FFFFFF" />
+
+            <LinearLayout
+                android:id="@+id/custom_bottom_nav"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:background="@android:color/transparent">
+
+                <ImageView
+                    android:id="@+id/nav_home"
+                    android:layout_width="0dp"
+                    android:layout_height="30dp"
+                    android:layout_weight="1"
+                    android:scaleType="centerInside"
+                    android:padding="4dp"
+                    android:src="@drawable/cloud_sun_fill"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:contentDescription="Pogoda" />
+
+                <ImageView
+                    android:id="@+id/nav_locations"
+                    android:layout_width="0dp"
+                    android:layout_height="30dp"
+                    android:layout_weight="1"
+                    android:scaleType="centerInside"
+                    android:padding="4dp"
+                    android:src="@drawable/map_fill"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:contentDescription="Lokalizacje" />
+
+                <ImageView
+                    android:id="@+id/nav_settings"
+                    android:layout_width="0dp"
+                    android:layout_height="30dp"
+                    android:layout_weight="1"
+                    android:scaleType="centerInside"
+                    android:padding="4dp"
+                    android:src="@drawable/gear_fill"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:contentDescription="Ustawienia" />
+            </LinearLayout>
+        </FrameLayout>
+    </LinearLayout>
+</FrameLayout>

@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="8dp">
+
+    <!-- Nagłówek -->
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clipChildren="false"
+        android:clipToPadding="false"
+        android:layout_margin="12dp"
+        card_view:cardCornerRadius="16dp"
+        card_view:cardElevation="0dp"
+        card_view:cardBackgroundColor="@android:color/transparent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clipChildren="false"
+            android:clipToPadding="false"
+            android:orientation="vertical"
+            android:padding="16dp"
+            android:gravity="center_horizontal">
+
+            <TextView
+                android:id="@+id/text_city"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:clipChildren="false"
+                android:clipToPadding="false"
+                android:text="Warszawa"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                android:shadowColor="#80000000"
+                android:shadowDx="0"
+                android:shadowDy="1"
+                android:shadowRadius="16" />
+
+            <RelativeLayout
+                android:id="@+id/temp_group"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:clipChildren="false"
+                android:clipToPadding="false"
+                android:padding="8dp">
+
+                <TextView
+                    android:id="@+id/text_temperature"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:clipChildren="false"
+                    android:clipToPadding="false"
+                    android:text="23"
+                    android:textSize="100sp"
+                    android:textColor="@color/white"
+                    android:shadowColor="#80000000"
+                    android:shadowDx="0"
+                    android:shadowDy="1"
+                    android:shadowRadius="32"
+                    android:layout_centerHorizontal="true" />
+
+                <TextView
+                    android:id="@+id/text_temperature_degree"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:clipChildren="false"
+                    android:clipToPadding="false"
+                    android:text="°"
+                    android:textSize="100sp"
+                    android:textColor="@color/white"
+                    android:layout_alignTop="@id/text_temperature"
+                    android:layout_toEndOf="@id/text_temperature"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginBottom="12dp"
+                    android:shadowColor="#80000000"
+                    android:shadowDx="0"
+                    android:shadowDy="1"
+                    android:shadowRadius="32" />
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/text_description"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:clipChildren="false"
+                android:clipToPadding="false"
+                android:text="Opis pogody"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                android:shadowColor="#80000000"
+                android:shadowDx="0"
+                android:shadowDy="1"
+                android:shadowRadius="16" />
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <!-- Siatka kafelków -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="8dp">
+
+            <!-- card_hourly_forecast -->
+            <include
+                android:id="@+id/card_hourly"
+                layout="@layout/card_hourly_forecast"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <!-- card_weekly_forecast -->
+            <include
+                android:id="@+id/card_weekly"
+                layout="@layout/card_weekly_forecast"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/card_hourly"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintWidth_percent="0.5"
+                android:layout_marginTop="8dp" />
+
+            <!-- wind_details -->
+            <include
+                android:id="@+id/card_wind"
+                layout="@layout/card_wind_details"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="@id/card_weekly"
+                app:layout_constraintStart_toEndOf="@id/card_weekly"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginStart="8dp" />
+
+            <!-- visibility_details -->
+            <include
+                android:id="@+id/card_visibility"
+                layout="@layout/card_visibility_details"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/card_wind"
+                app:layout_constraintStart_toStartOf="@id/card_wind"
+                app:layout_constraintWidth_percent="0.25"
+                android:layout_marginTop="8dp" />
+
+            <!-- humidity_details -->
+            <include
+                android:id="@+id/card_humidity"
+                layout="@layout/card_humidity_details"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/card_wind"
+                app:layout_constraintStart_toEndOf="@id/card_visibility"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"/>
+
+            <!-- air_quality_details -->
+            <include
+                android:id="@+id/card_air"
+                layout="@layout/card_air_quality_details"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/card_visibility"
+                app:layout_constraintStart_toStartOf="@id/card_visibility"
+                app:layout_constraintEnd_toStartOf="@id/card_pressure"
+                app:layout_constraintWidth_percent="0.25"
+                android:layout_marginTop="8dp" />
+
+            <!-- pressure_details -->
+            <include
+                android:id="@+id/card_pressure"
+                layout="@layout/card_pressure_details"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/card_humidity"
+                app:layout_constraintStart_toEndOf="@id/card_air"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp" />
+
+            <!-- footer_info -->
+            <include
+                android:id="@+id/card_footer"
+                layout="@layout/card_footer_info"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/card_air"
+                app:layout_constraintStart_toStartOf="@id/card_air"
+                app:layout_constraintEnd_toEndOf="parent"
+                card_view:layout_constraintBottom_toBottomOf="@id/card_weekly"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</LinearLayout>
