@@ -37,7 +37,7 @@ The project's focus was on implementing clean UI/UX principles, efficiently hand
 
 1.  **Clone the repository:**
     ```bash
-    git clone [https://github.com/ekl3m/TWOJA-NAZWA-REPO.git](https://github.com/ekl3m/TWOJA-NAZWA-REPO.git)
+    git clone [https://github.com/ekl3m/android-weather-app.git](https://github.com/ekl3m/android-weather-app.git)
     ```
 2.  **Open in Android Studio:**
     Open the project directory in Android Studio.
