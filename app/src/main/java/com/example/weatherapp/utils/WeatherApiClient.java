@@ -16,7 +16,7 @@ import org.json.JSONObject;
 
 public class WeatherApiClient {
 
-    private static final String API_KEY = "afa9a2f771bcd268f6eca812f085ae36";
+    private static final String API_KEY = "YOUR_API_KEY";
     private static final String BASE_URL = "https://api.openweathermap.org/data/2.5/weather";
 
     public interface WeatherCallback {
