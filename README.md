@@ -26,9 +26,12 @@ The project's focus was on implementing clean UI/UX principles, efficiently hand
 
 ## Screenshots
 
-| Main Screen | Locations View |
+| Main Screen (1/2) | Locations View |
 | :---: | :---: |
 | ![Main Screen](./images/WeatherApp_homescreen.png) | ![Forecast View](./images/WeatherApp_locations.png) |
+| Main Screen (2/2) | Settings View |
+| :---: | :---: |
+| ![Main Screen](./images/WeatherApp_homescreen2.png) | ![Forecast View](./images/WeatherApp_settings.png) |
 
 ## Setup
 
